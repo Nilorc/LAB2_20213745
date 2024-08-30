@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Configuración del Juego de Bingo</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="mt-5">Configuración del Juego de Bingo</h1>
+            <form action="/iniciar" method="post" class="mt-4">
+                <div class="form-group">
+                    <label for="dimensionTarjeta">Tamaño de la tarjeta (NxN):</label>
+                    <input type="number" class="form-control" id="dimensionTarjeta" name="dimensionTarjeta" required>
+                </div>
+                <div class="form-group">
+                    <label for="numeroTarjeta">Número máximo de intentos:</label>
+                    <input type="number" class="form-control" id="numeroTarjeta" name="numeroTarjeta" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Generar tarjetas</button>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Juego de Bingo</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="mt-5">Juego de Bingo</h1>
+
+            <div class="mt-4">
+                <h3>Tarjetas Generadas</h3>
+                <div th:each="tarjeta : ${tarjetasBingo}">
+                    <p>Tarjeta <span th:text="${#numbers.indexOf(tarjeta) + 1}"></span></p>
+                    <table class="table table-bordered">
+                        <tr th:each="fila : ${tarjeta}">
+                            <td th:each="numero : ${fila}">
+                                <span th:text="${numero}"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <form action="/iniciar" method="post" class="mt-4">
+                <div class="form-group">
+                    <label for="numero">Ingresar Números de Bingo:</label>
+                    <input type="number" class="form-control" id="numero" name="numero" required>
+                </div>
+                <button type="submit" class="btn btn-success">Agregar Número</button>
+            </form>
+        </div>
+    </body>
+</html>
